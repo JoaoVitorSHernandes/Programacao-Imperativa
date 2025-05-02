@@ -9,10 +9,6 @@ void mudarCor(int corTexto, int corFundo) {
   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (corFundo << 4) | corTexto);
 }
 
-const int numMaxArquivo = 100;
-const int marcaLen = 50;
-const int modeloLen = 50;
-
 typedef struct {
   char marca[50];
   char modelo[50];
@@ -228,7 +224,7 @@ void menu() {
 }
 
 int main() {
-  setlocale(LC_ALL, "Portuguese_Brazil");
+  setlocale(LC_ALL, "Portuguese");
   carregarArquivo();
   menu();
 
