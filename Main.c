@@ -13,7 +13,7 @@ const int numMaxArquivo = 100;
 const int marcaLen = 50;
 const int modeloLen = 50;
 
-typedef struct dados {
+typedef struct {
   char marca[50];
   char modelo[50];
   int anoFabricacao;
@@ -122,7 +122,7 @@ void exibirPorMarca() {
 void exibirPorPreco() {
   mudarCor(0, 3);
   float precoMin, precoMax;
-  printf("Digite o preço mínimo e máximo (preço mínimo + ESPAÇO + preço máximo): ");
+  printf("Digite o pre?o m?nimo e m?ximo (pre?o m?nimo + ESPA?O + pre?o m?ximo): ");
   scanf("%f %f", &precoMin, &precoMax);
   for (int i = 0; i < total; i++) {
     if (smartphones[i].preco >= precoMin && smartphones[i].preco <= precoMax) {
@@ -143,9 +143,9 @@ void inserirSmartphoneNovo() {
   scanf(" %50[^\n]", s.modelo);
   printf("Digite o ano: ");
   scanf("%d", &s.anoFabricacao);
-  printf("Digite a memória (GB): ");
+  printf("Digite a mem?ria (GB): ");
   scanf("%d", &s.capacidaDeMemoria);
-  printf("Digite o preço: ");
+  printf("Digite o pre?o: ");
   scanf("%f", &s.preco);
   inserirDadoOrdenado(s);
   salvarArquivo();
@@ -155,7 +155,7 @@ void inserirSmartphoneNovo() {
 void removerMemoriaInferior() {
   mudarCor(0, 5);
   int minMemoria;
-  printf("Digite a memória mínima (GB): ");
+  printf("Digite a mem?ria m?nima (GB): ");
   scanf("%d", &minMemoria);
   int i = 0;
   while (i < total) {
@@ -168,7 +168,7 @@ void removerMemoriaInferior() {
       i++;
     }
   }
-  printf("Smartphones com memória inferior a %dGB removidos.\n", minMemoria);
+  printf("Smartphones com mem?ria inferior a %dGB removidos.\n", minMemoria);
 }
 
 void sairPrograma() {
@@ -187,20 +187,20 @@ void menu() {
     printf("2 -> Exibir por marca\n");
 
     mudarCor(3, 0); // Texto cyan e fundo preto
-    printf("3 -> Exibir por faixa de preço\n");
+    printf("3 -> Exibir por faixa de pre?o\n");
 
     mudarCor(6, 0); // Texto amarelo e fundo preto
     printf("4 -> Inserir novo smartphone\n");
 
     mudarCor(5, 0); // Texto magenta e fundo preto
-    printf("5 -> Remover por memória inferior à especificada\n");
+    printf("5 -> Remover por mem?ria inferior ? especificada\n");
 
 
     mudarCor(0, 4); // Texto vermelho e fundo preto
     printf("6 -> Sair\n");
 
     mudarCor(7, 0); // Texto branco e fundo preto
-    printf("Escolha uma opção: ");
+    printf("Escolha uma op??o: ");
     scanf("%d", &opcao);
 
     if (opcao == 1) {
