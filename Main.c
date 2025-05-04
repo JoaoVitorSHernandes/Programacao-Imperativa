@@ -93,7 +93,7 @@ void exibirTodosSmartphones() {
   printf("                Lista de Smartphones                \n");
   for (int i = 0; i < total; i++) {
     mudarCor(15, 0);
-    printf("[%d] %s %s %d %dGB R$%.2f\n", i + 1,
+    printf("[%d] %s %s %d %dGB R$%.2f\n", i,
            smartphones[i].marca, smartphones[i].modelo,
            smartphones[i].anoFabricacao, smartphones[i].capacidaDeMemoria,
            smartphones[i].preco);
@@ -110,7 +110,7 @@ void exibirPorMarca() {
   printf("Smartphones da marca %s:\n", marcaBusca);
   for (int i = 0; i < total; i++) {
     if (strcmp(smartphones[i].marca, marcaBusca) == 0) {
-      printf("[%d] %s %s %d %dGB R$%.2f\n", i + 1,
+      printf("[%d] %s %s %d %dGB R$%.2f\n", i,
              smartphones[i].marca, smartphones[i].modelo,
              smartphones[i].anoFabricacao, smartphones[i].capacidaDeMemoria,
              smartphones[i].preco);
@@ -120,14 +120,14 @@ void exibirPorMarca() {
 
 void exibirPorPreco() {
   mudarCor(0, 13);
-  printf("                 Listar por preÁo                   \n");
+  printf("                 Listar por pre√ßo                   \n");
   mudarCor(7, 0);
   float precoMin, precoMax;
-  printf("Digite o preÁo mÌnimo e m·ximo (preÁo mÌnimo + ESPA«O + preÁo m·ximo):");
+  printf("Digite o pre√ßo m√≠nimo e m√°ximo (pre√ßo m√≠nimo + ESPA√áO + pre√ßo m√°ximo):");
   scanf("%f %f", &precoMin, &precoMax);
   for (int i = 0; i < total; i++) {
     if (smartphones[i].preco >= precoMin && smartphones[i].preco <= precoMax) {
-      printf("[%d] %s %s %d %dGB R$%.2f\n", i + 1,
+      printf("[%d] %s %s %d %dGB R$%.2f\n", i,
              smartphones[i].marca, smartphones[i].modelo,
              smartphones[i].anoFabricacao, smartphones[i].capacidaDeMemoria,
              smartphones[i].preco);
@@ -146,9 +146,9 @@ void inserirSmartphoneNovo() {
   scanf(" %50[^\n]", s.modelo);
   printf("Digite o ano:");
   scanf("%d", &s.anoFabricacao);
-  printf("Digite a memÛria (GB):");
+  printf("Digite a mem√≥ria (GB):");
   scanf("%d", &s.capacidaDeMemoria);
-  printf("Digite o preÁo:");
+  printf("Digite o pre√ßo:");
   scanf("%f", &s.preco);
   inserirDadoOrdenado(s);
   salvarArquivo();
@@ -157,10 +157,10 @@ void inserirSmartphoneNovo() {
 
 void removerMemoriaInferior() {
   mudarCor(0, 11);
-  printf("     Remover por memÛria inferior ‡ especificada    \n");
+  printf("     Remover por mem√≥ria inferior √† especificada    \n");
   mudarCor(7, 0);
   int minMemoria;
-  printf("Digite a memÛria mÌnima (GB):");
+  printf("Digite a mem√≥ria m√≠nima (GB):");
   scanf("%d", &minMemoria);
   int i = 0;
   while (i < total) {
@@ -174,7 +174,7 @@ void removerMemoriaInferior() {
     }
   }
   salvarArquivo();
-  printf("Smartphones com memÛria inferior a %dGB removidos!\n", minMemoria);
+  printf("Smartphones com mem√≥ria inferior a %dGB removidos!\n", minMemoria);
 }
 
 void sairPrograma() {
@@ -196,19 +196,19 @@ void menu() {
     printf(" 2 -> Exibir por marca                              \n");
 
     mudarCor(5, 15); // Texto cyan e fundo preto
-    printf(" 3 -> Exibir por faixa de preÁo                     \n");
+    printf(" 3 -> Exibir por faixa de pre√ßo                     \n");
 
     mudarCor(6, 15); // Texto amarelo e fundo preto
     printf(" 4 -> Inserir novo smartphone                       \n");
 
     mudarCor(3, 15); // Texto magenta e fundo preto
-    printf(" 5 -> Remover por memÛria inferior ‡ especificada   \n");
+    printf(" 5 -> Remover por mem√≥ria inferior √† especificada   \n");
 
     mudarCor(0, 4); // Texto vermelho e fundo preto
     printf(" 6 -> Sair \n");
 
     mudarCor(7, 0); // Texto branco e fundo preto
-    printf("Escolha uma opÁ„o:");
+    printf("Escolha uma op√ß√£o:");
     scanf("%d", &opcao);
 
     if (opcao == 1) {
@@ -230,7 +230,7 @@ void menu() {
       sairPrograma();
     }
     else {
-      printf("Inv·lido, Tente novamente.\n");
+      printf("Inv√°lido, Tente novamente.\n");
     }
   } while (opcao != 6);
 }
