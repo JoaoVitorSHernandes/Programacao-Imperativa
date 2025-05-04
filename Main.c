@@ -32,7 +32,7 @@ void inserirDadoOrdenado(Smartphone s) {
 
 void carregarArquivo() {
   //r = read
-  FILE *file = fopen("arquivo.txt", "r");
+  FILE *file = fopen("smartphones.txt", "r");
   if (!file) {
     printf("Erro ao abrir arquivo\n");
     return;
@@ -69,7 +69,7 @@ void carregarArquivo() {
 
 void salvarArquivo() {
   //w = write
-  FILE *file = fopen("arquivo.txt", "w");
+  FILE *file = fopen("smartphones.txt", "w");
   if (!file) {
     printf("Erro ao abrir arquivo para escrita\n");
     return;
@@ -89,10 +89,11 @@ void salvarArquivo() {
 
 
 void exibirTodosSmartphones() {
-  mudarCor(0, 1);
-  printf("Lista de Smartphones:\n");
+  mudarCor(0, 10);
+  printf("                Lista de Smartphones                \n");
   for (int i = 0; i < total; i++) {
-    printf("[%d] %s %s %d %dGB R$%.2f\n", i,
+    mudarCor(15, 0);
+    printf("[%d] %s %s %d %dGB R$%.2f\n", i + 1,
            smartphones[i].marca, smartphones[i].modelo,
            smartphones[i].anoFabricacao, smartphones[i].capacidaDeMemoria,
            smartphones[i].preco);
@@ -100,14 +101,16 @@ void exibirTodosSmartphones() {
 }
 
 void exibirPorMarca() {
-  mudarCor(0, 2);
+  mudarCor(0, 9);
+  printf("                 Listar por marca                   \n");
   char marcaBusca[50];
-  printf("Digite a marca: ");
+  mudarCor(7, 0);
+  printf("Digite a marca:");
   scanf(" %50[^\n]", marcaBusca);
   printf("Smartphones da marca %s:\n", marcaBusca);
   for (int i = 0; i < total; i++) {
     if (strcmp(smartphones[i].marca, marcaBusca) == 0) {
-      printf("[%d] %s %s %d %dGB R$%.2f\n", i,
+      printf("[%d] %s %s %d %dGB R$%.2f\n", i + 1,
              smartphones[i].marca, smartphones[i].modelo,
              smartphones[i].anoFabricacao, smartphones[i].capacidaDeMemoria,
              smartphones[i].preco);
@@ -116,13 +119,15 @@ void exibirPorMarca() {
 }
 
 void exibirPorPreco() {
-  mudarCor(0, 3);
+  mudarCor(0, 13);
+  printf("                 Listar por preço                   \n");
+  mudarCor(7, 0);
   float precoMin, precoMax;
-  printf("Digite o preço mínimo e máximo (preço mínimo + ESPAÇO + preço máximo): ");
+  printf("Digite o preço mínimo e máximo (preço mínimo + ESPAÇO + preço máximo):");
   scanf("%f %f", &precoMin, &precoMax);
   for (int i = 0; i < total; i++) {
     if (smartphones[i].preco >= precoMin && smartphones[i].preco <= precoMax) {
-      printf("[%d] %s %s %d %dGB R$%.2f\n", i,
+      printf("[%d] %s %s %d %dGB R$%.2f\n", i + 1,
              smartphones[i].marca, smartphones[i].modelo,
              smartphones[i].anoFabricacao, smartphones[i].capacidaDeMemoria,
              smartphones[i].preco);
@@ -131,27 +136,31 @@ void exibirPorPreco() {
 }
 
 void inserirSmartphoneNovo() {
-  mudarCor(0, 6);
+  mudarCor(0, 14);
+  printf("              Inserir novo Smartphone               \n");
+  mudarCor(7, 0);
   Smartphone s;
-  printf("Digite a marca: ");
+  printf("Digite a marca:");
   scanf(" %50[^\n]", s.marca);
-  printf("Digite o modelo: ");
+  printf("Digite o modelo:");
   scanf(" %50[^\n]", s.modelo);
-  printf("Digite o ano: ");
+  printf("Digite o ano:");
   scanf("%d", &s.anoFabricacao);
-  printf("Digite a memória (GB): ");
+  printf("Digite a memória (GB):");
   scanf("%d", &s.capacidaDeMemoria);
-  printf("Digite o preço: ");
+  printf("Digite o preço:");
   scanf("%f", &s.preco);
   inserirDadoOrdenado(s);
   salvarArquivo();
-  printf("Smartphone inserido com sucesso.\n");
+  printf("Smartphone inserido com sucesso!\n");
 }
 
 void removerMemoriaInferior() {
-  mudarCor(0, 5);
+  mudarCor(0, 11);
+  printf("     Remover por memória inferior à especificada    \n");
+  mudarCor(7, 0);
   int minMemoria;
-  printf("Digite a memória mínima (GB): ");
+  printf("Digite a memória mínima (GB):");
   scanf("%d", &minMemoria);
   int i = 0;
   while (i < total) {
@@ -164,7 +173,8 @@ void removerMemoriaInferior() {
       i++;
     }
   }
-  printf("Smartphones com memória inferior a %dGB removidos.\n", minMemoria);
+  salvarArquivo();
+  printf("Smartphones com memória inferior a %dGB removidos!\n", minMemoria);
 }
 
 void sairPrograma() {
@@ -176,27 +186,29 @@ void sairPrograma() {
 void menu() {
   int opcao;
   do {
-    mudarCor(1, 0); // Texto azul e fundo preto
-    printf("1 -> Exibir todos os smartphones\n");
+    mudarCor(1, 15); // Texto azul e fundo preto
+    printf("                       MENU                         \n");
 
-    mudarCor(2, 0); // Texto verde e fundo preto
-    printf("2 -> Exibir por marca\n");
+    mudarCor(2, 15); // Texto azul e fundo preto
+    printf(" 1 -> Exibir todos os smartphones                   \n");
 
-    mudarCor(3, 0); // Texto cyan e fundo preto
-    printf("3 -> Exibir por faixa de preço\n");
+    mudarCor(1, 15); // Texto verde e fundo preto
+    printf(" 2 -> Exibir por marca                              \n");
 
-    mudarCor(6, 0); // Texto amarelo e fundo preto
-    printf("4 -> Inserir novo smartphone\n");
+    mudarCor(5, 15); // Texto cyan e fundo preto
+    printf(" 3 -> Exibir por faixa de preço                     \n");
 
-    mudarCor(5, 0); // Texto magenta e fundo preto
-    printf("5 -> Remover por memória inferior à especificada\n");
+    mudarCor(6, 15); // Texto amarelo e fundo preto
+    printf(" 4 -> Inserir novo smartphone                       \n");
 
+    mudarCor(3, 15); // Texto magenta e fundo preto
+    printf(" 5 -> Remover por memória inferior à especificada   \n");
 
     mudarCor(0, 4); // Texto vermelho e fundo preto
-    printf("6 -> Sair\n");
+    printf(" 6 -> Sair \n");
 
     mudarCor(7, 0); // Texto branco e fundo preto
-    printf("Escolha uma opção: ");
+    printf("Escolha uma opção:");
     scanf("%d", &opcao);
 
     if (opcao == 1) {
