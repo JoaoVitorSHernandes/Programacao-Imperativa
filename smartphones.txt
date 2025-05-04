@@ -1,0 +1,25 @@
+Motorola
+Edge
+2022
+32
+1500,00
+Samsung
+Galaxy
+2023
+64
+2000,00
+Samsung
+Galaxy S23
+2020
+128
+3000,00
+Apple
+iPhone
+2024
+128
+5000,00
+MarcaX
+ModeloY
+1977
+120
+6000,00
