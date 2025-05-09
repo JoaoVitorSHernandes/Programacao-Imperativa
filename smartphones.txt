@@ -1,25 +1,150 @@
-Motorola
-Edge
-2022
+Alcatel
+1S
+2021
 32
-1500,00
+700.00
+LeEco
+Le Pro3
+2016
+64
+800.00
+Philips
+X818
+2017
+64
+900.00
+Panasonic
+Eluga Ray 810
+2019
+64
+950.00
+BQ
+Aquaris X2
+2018
+64
+1000.00
+Micromax
+IN Note 2
+2022
+64
+1100.00
+Nokia
+G60
+2022
+64
+1200.00
+LG
+Velvet
+2021
+128
+1500.00
+Infinix
+Zero 30
+2023
+128
+1600.00
+Xiaomi
+Redmi Note 13
+2024
+128
+1800.00
+Tecno
+Camon 20 Premier
+2023
+256
+1900.00
 Samsung
 Galaxy
 2023
 64
-2000,00
+2000.00
+Realme
+GT Neo 5
+2023
+256
+2100.00
+Meizu
+20 Pro
+2023
+256
+2300.00
+Oppo
+Reno10 Pro
+2023
+256
+2600.00
+Motorola
+Edge 40
+2023
+256
+2800.00
+Sharp
+Aquos R7
+2022
+256
+2900.00
 Samsung
 Galaxy S23
 2020
 128
-3000,00
+3000.00
+Samsung
+Galaxy s22
+2022
+256
+3000.00
+ZTE
+Axon 40 Ultra
+2022
+256
+3100.00
+OnePlus
+11R
+2023
+128
+3200.00
+Lenovo
+Legion Y90
+2022
+512
+3400.00
+Sony
+Xperia 5 IV
+2022
+128
+3500.00
+Huawei
+P60 Pro
+2023
+256
+3700.00
+Vivo
+X90
+2023
+512
+3900.00
+Google
+Pixel 8
+2024
+128
+4000.00
+Honor
+Magic5 Pro
+2023
+512
+4200.00
+Asus
+ROG Phone 7
+2023
+512
+4500.00
 Apple
 iPhone
 2024
 128
-5000,00
+5000.00
 MarcaX
 ModeloY
 1977
 120
-6000,00
+6000.00
